@@ -220,11 +220,18 @@
   gap: 24px;
   max-width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease,
     background 0.25s ease;
+}
+
+.footer-contact-card div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .footer-email-card {
