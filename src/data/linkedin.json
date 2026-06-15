@@ -1,0 +1,47 @@
+{
+  "competences": [
+    "Digital Marketing",
+    "AI Automations",
+    "SEO",
+    "Email Marketing",
+    "Prompt Engineering",
+    "Lead Generation",
+    "WordPress Development",
+    "B2B Strategy",
+    "Marketing Automation",
+    "Content Marketing"
+  ],
+  "profile": "Digital Marketing & AI Automations Specialist with expertise in lead generation, SEO, email marketing, and automated solutions for small and medium enterprises. Expert in building intelligent automation systems.",
+  "projects": [
+    {
+      "title": "B2B Agent",
+      "desc": "B2B lead nurturing automation suite",
+      "image": "/images/project1.png",
+      "url": "#"
+    },
+    {
+      "title": "Lead Reporting Automation for Business",
+      "desc": "Automated lead tracking and reporting system",
+      "image": "/images/project2.png",
+      "url": "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
+    },
+    {
+      "title": "WordPress Agency Kit",
+      "desc": "Template suite for digital marketing agencies",
+      "image": "/images/project3.png",
+      "url": "#"
+    },
+    {
+      "title": "VoxItalia MVP",
+      "desc": "AI-powered video platform for businesses",
+      "image": "/images/project4.png",
+      "url": "https://example.com/voxit"
+    },
+    {
+      "title": "Agency Landing Page",
+      "desc": "Responsive portfolio landing page",
+      "image": "/images/project5.png",
+      "url": "#"
+    }
+  ]
+}

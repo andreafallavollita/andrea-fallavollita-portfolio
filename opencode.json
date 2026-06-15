@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/~poolside/laguna-m.1:free",
+  "enabled_providers": ["openrouter"],
+  "provider": {
+    "openrouter": {
+      "models": {
+        "~poolside/laguna-m.1:free": {},
+        "~openrouter/owl-alpha": {},
+        "~nvidia/nemotron-3-ultra-550b-a55b:free": {},
+        "~openai/gpt-oss-120b:free": {}
+      }
+    }
+  },
+  "permission": {
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "webfetch": "allow",
+    "edit": "ask",
+    "bash": "ask"
+  }
+}
