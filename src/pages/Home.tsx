@@ -13,7 +13,7 @@ const projects = [
     desc: "Agent AI per automatizzare le richieste di contatto su LinkedIn: invia messaggi personalizzati in base ai criteri target, filtra i lead e gestisce le conversazioni in modo scalabile.",
     alt: "Automazione LinkedIn per lead generation B2B con agent AI",
     tags: ["B2B", "LinkedIn Automation", "Lead Generation"],
-    image: "/images/project1.png",
+    image: `${import.meta.env.BASE_URL}images/project1.png`,
     url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     desc: "Sistema automatico di generazione report da file sorgente con codice broker: estrae dati, genera dashboard e report personalizzati per monitorare performance e conversioni.",
     alt: "Report automatici con codice broker per analisi lead e metriche business",
     tags: ["Marketing Automation", "Lead Generation", "Reporting"],
-    image: "/images/project2.png",
+    image: `${import.meta.env.BASE_URL}images/project2.png`,
     url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     desc: "Gestione di siti WordPress e miglioramento per lead generation: template personalizzati, landing page ottimizzate e integrazioni per aumentare le conversioni.",
     alt: "Gestione WordPress per agenzie digitali con focus su lead generation e ottimizzazione conversioni",
     tags: ["WordPress", "Frontend Design", "Lead Generation"],
-    image: "/images/project3.png",
+    image: `${import.meta.env.BASE_URL}images/project3.png`,
     url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     desc: "Piattaforma AI per localizzare contenuti video in italiano, con workflow guidato, traduzione automatica e gestione dei sottotitoli.",
     alt: "Interfaccia AI per localizzazione video e traduzione automatica in italiano",
     tags: ["AI Automation", "Video Localization", "Workflow Automation"],
-    image: "/images/project4.png",
+    image: `${import.meta.env.BASE_URL}images/project4.png`,
     url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     desc: "Landing page responsive per agenzie digitali, progettata per comunicare servizi, valore e conversione in modo chiaro.",
     alt: "Landing page moderna per agenzia digitale con design responsive",
     tags: ["Frontend Design", "Landing Page", "Digital Marketing"],
-    image: "/images/project5.png",
+    image: `${import.meta.env.BASE_URL}images/project5.png`,
     url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
   }
 ]
