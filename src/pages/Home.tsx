@@ -81,6 +81,10 @@ const Home: React.FC = () => {
               border: '1px solid rgba(34, 211, 238, 0.2)',
               borderRadius: '12px',
               padding: '20px',
+              height: '80px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               textAlign: 'center'
             }}>
               {skill}
