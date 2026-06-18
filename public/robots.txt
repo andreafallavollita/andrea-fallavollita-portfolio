@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andreafallavollita.netlify.app/sitemap.xml
+Sitemap: https://andreafallavollita.github.io/andrea-fallavollita-portfolio/sitemap.xml
