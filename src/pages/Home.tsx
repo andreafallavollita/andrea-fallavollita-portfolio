@@ -7,14 +7,25 @@ const competences = [
   "Lead Generation", "WordPress Development", "B2B Strategy", "Marketing Automation", "Content Marketing"
 ]
 
-const projects = [
+type Project = {
+  title: string
+  desc: string
+  alt: string
+  tags: string[]
+  image: string
+} & (
+  | { url: string; details?: never }
+  | { url?: never; details: string }
+)
+
+const projects: Project[] = [
   {
     title: "Agent B2B",
-    desc: "Agent AI per automatizzare le richieste di contatto su LinkedIn: invia messaggi personalizzati in base ai criteri target, filtra i lead e gestisce le conversazioni in modo scalabile.",
+    desc: "Automazione LinkedIn per la lead generation B2B: selezione dei contatti target e gestione dell’invio di richieste di collegamento.",
     alt: "Automazione LinkedIn per lead generation B2B con agent AI",
     tags: ["B2B", "LinkedIn Automation", "Lead Generation"],
     image: `${import.meta.env.BASE_URL}images/project1.png`,
-    url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
+    url: "https://github.com/andreafallavollita/link111"
   },
   {
     title: "Lead Reporting Automation for Business",
@@ -22,7 +33,7 @@ const projects = [
     alt: "Report automatici con codice broker per analisi lead e metriche business",
     tags: ["Marketing Automation", "Lead Generation", "Reporting"],
     image: `${import.meta.env.BASE_URL}images/project2.png`,
-    url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
+    details: "Il progetto riguarda il passaggio dai file sorgente con codice broker a dashboard e report personalizzati per leggere performance e conversioni. Questa scheda presenta una sintesi del lavoro: non sono disponibili qui codice, dati operativi o una demo pubblica."
   },
   {
     title: "WordPress Agency Kit",
@@ -30,7 +41,7 @@ const projects = [
     alt: "Gestione WordPress per agenzie digitali con focus su lead generation e ottimizzazione conversioni",
     tags: ["WordPress", "Frontend Design", "Lead Generation"],
     image: `${import.meta.env.BASE_URL}images/project3.png`,
-    url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
+    details: "Il lavoro comprende template personalizzati, landing page e integrazioni WordPress a supporto della lead generation. Questa scheda descrive l’ambito delle attività; non offre un kit scaricabile né una demo pubblica verificata."
   },
   {
     title: "VoxItalia MVP",
@@ -38,7 +49,7 @@ const projects = [
     alt: "Interfaccia AI per localizzazione video e traduzione automatica in italiano",
     tags: ["AI Automation", "Video Localization", "Workflow Automation"],
     image: `${import.meta.env.BASE_URL}images/project4.png`,
-    url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
+    details: "L’MVP è descritto come un workflow per localizzare video in italiano, con traduzione e gestione dei sottotitoli. Non è disponibile una demo pubblica verificata: questa descrizione non consente di provare la piattaforma."
   },
   {
     title: "Agency Landing Page",
@@ -46,7 +57,7 @@ const projects = [
     alt: "Landing page moderna per agenzia digitale con design responsive",
     tags: ["Frontend Design", "Landing Page", "Digital Marketing"],
     image: `${import.meta.env.BASE_URL}images/project5.png`,
-    url: "https://www.linkedin.com/in/andrea-fallavollita-454697178/"
+    details: "Il progetto riguarda una landing page responsive per presentare servizi e proposta di valore di un’agenzia digitale, con attenzione alla conversione. Non è disponibile un sito pubblico attribuibile con certezza a questa scheda; il dettaglio riassume l’ambito del progetto."
   }
 ]
 
@@ -112,7 +123,14 @@ const Home: React.FC = () => {
               <div style={{ padding: '24px' }}>
                 <h3 style={{ color: '#00f5ff', marginBottom: '10px' }}>{proj.title}</h3>
                 <p style={{ color: '#888', marginBottom: '15px' }}>{proj.desc}</p>
-                <a href={proj.url} target="_blank" rel="noopener noreferrer" style={{ color: '#00f5ff', textDecoration: 'none' }}>Vedi progetto →</a>
+                {proj.url ? (
+                  <a href={proj.url} target="_blank" rel="noopener noreferrer" aria-label={`Codice su GitHub: ${proj.title} (si apre in una nuova scheda)`} style={{ color: '#00f5ff', textDecoration: 'none' }}>Codice su GitHub →</a>
+                ) : (
+                  <details>
+                    <summary aria-label={`Dettagli progetto: ${proj.title}`} style={{ color: '#00f5ff', cursor: 'pointer', padding: '8px 0' }}>Dettagli progetto</summary>
+                    <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginTop: '12px' }}>{proj.details}</p>
+                  </details>
+                )}
               </div>
             </div>
           ))}
