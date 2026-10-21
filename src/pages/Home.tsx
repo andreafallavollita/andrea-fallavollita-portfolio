@@ -1,4 +1,5 @@
 import React from 'react'
+import { BarChart3, Workflow, LayoutTemplate, PawPrint, type LucideIcon } from 'lucide-react'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
 
@@ -10,54 +11,44 @@ const competences = [
 type Project = {
   title: string
   desc: string
-  alt: string
   tags: string[]
-  image: string
-} & (
-  | { url: string; details?: never }
-  | { url?: never; details: string }
-)
+  category: string
+  icon: LucideIcon
+  url: string
+}
 
 const projects: Project[] = [
   {
-    title: "Agent B2B",
-    desc: "Automazione LinkedIn per la lead generation B2B: selezione dei contatti target e gestione dell’invio di richieste di collegamento.",
-    alt: "Automazione LinkedIn per lead generation B2B con agent AI",
-    tags: ["B2B", "LinkedIn Automation", "Lead Generation"],
-    image: `${import.meta.env.BASE_URL}images/project1.png`,
-    url: "https://github.com/andreafallavollita/link111"
+    title: "Dynamica Dashboard",
+    desc: "Dashboard per monitorare campagne, spesa pubblicitaria e lead. Integra dati da Google Ads, Meta Ads e CRM, con filtri per periodo, KPI ed esportazioni CSV ed Excel.",
+    tags: ["Python", "Streamlit", "API Ads", "Reporting"],
+    category: "Marketing analytics",
+    icon: BarChart3,
+    url: "https://github.com/andreafallavollita5-cmyk/dynamica-dashboard"
   },
   {
-    title: "Lead Reporting Automation for Business",
-    desc: "Sistema automatico di generazione report da file sorgente con codice broker: estrae dati, genera dashboard e report personalizzati per monitorare performance e conversioni.",
-    alt: "Report automatici con codice broker per analisi lead e metriche business",
-    tags: ["Marketing Automation", "Lead Generation", "Reporting"],
-    image: `${import.meta.env.BASE_URL}images/project2.png`,
-    details: "Il progetto riguarda il passaggio dai file sorgente con codice broker a dashboard e report personalizzati per leggere performance e conversioni. Questa scheda presenta una sintesi del lavoro: non sono disponibili qui codice, dati operativi o una demo pubblica."
+    title: "Agente Lead",
+    desc: "Pipeline Python per raccogliere, aggregare e validare dati lead e generare report per destinatario. Il repository pubblico presenta una versione dimostrativa con dati sintetici e invii esterni disattivati per impostazione predefinita.",
+    tags: ["Python", "Automazione", "Validazione dati", "Lead reporting"],
+    category: "Workflow automation",
+    icon: Workflow,
+    url: "https://github.com/andreafallavollita5-cmyk/agente-lead"
   },
   {
-    title: "WordPress Agency Kit",
-    desc: "Gestione di siti WordPress e miglioramento per lead generation: template personalizzati, landing page ottimizzate e integrazioni per aumentare le conversioni.",
-    alt: "Gestione WordPress per agenzie digitali con focus su lead generation e ottimizzazione conversioni",
-    tags: ["WordPress", "Frontend Design", "Lead Generation"],
-    image: `${import.meta.env.BASE_URL}images/project3.png`,
-    details: "Il lavoro comprende template personalizzati, landing page e integrazioni WordPress a supporto della lead generation. Questa scheda descrive l’ambito delle attività; non offre un kit scaricabile né una demo pubblica verificata."
+    title: "TIG Performance",
+    desc: "Frontend responsive per presentare soluzioni AI dedicate al performance marketing. Include una hero con video, sezioni servizi, contenuti video e un modulo di richiesta informazioni.",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive design"],
+    category: "Web development",
+    icon: LayoutTemplate,
+    url: "https://github.com/andreafallavollita5-cmyk/versione-2-tig-performance"
   },
   {
-    title: "VoxItalia MVP",
-    desc: "Piattaforma AI per localizzare contenuti video in italiano, con workflow guidato, traduzione automatica e gestione dei sottotitoli.",
-    alt: "Interfaccia AI per localizzazione video e traduzione automatica in italiano",
-    tags: ["AI Automation", "Video Localization", "Workflow Automation"],
-    image: `${import.meta.env.BASE_URL}images/project4.png`,
-    details: "L’MVP è descritto come un workflow per localizzare video in italiano, con traduzione e gestione dei sottotitoli. Non è disponibile una demo pubblica verificata: questa descrizione non consente di provare la piattaforma."
-  },
-  {
-    title: "Agency Landing Page",
-    desc: "Landing page responsive per agenzie digitali, progettata per comunicare servizi, valore e conversione in modo chiaro.",
-    alt: "Landing page moderna per agenzia digitale con design responsive",
-    tags: ["Frontend Design", "Landing Page", "Digital Marketing"],
-    image: `${import.meta.env.BASE_URL}images/project5.png`,
-    details: "Il progetto riguarda una landing page responsive per presentare servizi e proposta di valore di un’agenzia digitale, con attenzione alla conversione. Non è disponibile un sito pubblico attribuibile con certezza a questa scheda; il dettaglio riassume l’ambito del progetto."
+    title: "HappyTails",
+    desc: "App per la ricerca e l’adozione di animali, sviluppata con React Native ed Expo. Comprende onboarding, ricerca, schede di animali e rifugi, preferiti e chat, con integrazione Supabase.",
+    tags: ["React Native", "Expo", "TypeScript", "Supabase"],
+    category: "App development",
+    icon: PawPrint,
+    url: "https://github.com/andreafallavollita5-cmyk/happytails-app"
   }
 ]
 
@@ -105,35 +96,52 @@ const Home: React.FC = () => {
       </section>
 
       <section id="projects" style={{ padding: '80px 20px' }}>
-        <h2 style={{ fontSize: '36px', color: '#00f5ff', textAlign: 'center', marginBottom: '40px' }}>Progetti</h2>
+        <h2 style={{ fontSize: '36px', color: '#00f5ff', textAlign: 'center', marginBottom: '40px' }}>Progetti principali</h2>
         <div style={{ 
           maxWidth: '1200px', 
           margin: '0 auto', 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
           gap: '24px' 
         }}>
-          {projects.map((proj, idx) => (
-            <div key={idx} style={{
-              background: '#111',
-              borderRadius: '16px',
-              overflow: 'hidden'
-            }}>
-              <img src={proj.image} alt={proj.alt} loading="lazy" decoding="async" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-              <div style={{ padding: '24px' }}>
-                <h3 style={{ color: '#00f5ff', marginBottom: '10px' }}>{proj.title}</h3>
-                <p style={{ color: '#888', marginBottom: '15px' }}>{proj.desc}</p>
-                {proj.url ? (
-                  <a href={proj.url} target="_blank" rel="noopener noreferrer" aria-label={`Codice su GitHub: ${proj.title} (si apre in una nuova scheda)`} style={{ color: '#00f5ff', textDecoration: 'none' }}>Codice su GitHub →</a>
-                ) : (
-                  <details>
-                    <summary aria-label={`Dettagli progetto: ${proj.title}`} style={{ color: '#00f5ff', cursor: 'pointer', padding: '8px 0' }}>Dettagli progetto</summary>
-                    <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginTop: '12px' }}>{proj.details}</p>
-                  </details>
-                )}
-              </div>
-            </div>
-          ))}
+          {projects.map((proj) => {
+            const Icon = proj.icon
+            return (
+              <article key={proj.url} style={{
+                background: '#111',
+                border: '1px solid rgba(34, 211, 238, 0.2)',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                minWidth: 0,
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                <div aria-hidden="true" style={{
+                  minHeight: '170px',
+                  padding: '28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '24px',
+                  background: 'linear-gradient(135deg, #082f49, #020617)',
+                  color: '#67e8f9'
+                }}>
+                  <Icon size={48} strokeWidth={1.5} />
+                  <span style={{ fontSize: '13px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{proj.category}</span>
+                </div>
+                <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  <h3 style={{ color: '#00f5ff', marginBottom: '10px' }}>{proj.title}</h3>
+                  <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginBottom: '20px' }}>{proj.desc}</p>
+                  <ul aria-label={`Tecnologie e competenze: ${proj.title}`} style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', listStyle: 'none', padding: 0, margin: '0 0 24px' }}>
+                    {proj.tags.map((tag) => (
+                      <li key={tag} style={{ padding: '5px 10px', borderRadius: '999px', background: '#082f49', color: '#a5f3fc', fontSize: '12px' }}>{tag}</li>
+                    ))}
+                  </ul>
+                  <a href={proj.url} target="_blank" rel="noopener noreferrer" aria-label={`Codice su GitHub: ${proj.title} (si apre in una nuova scheda)`} style={{ color: '#00f5ff', textDecoration: 'underline', textUnderlineOffset: '4px', marginTop: 'auto', padding: '8px 0', alignSelf: 'flex-start' }}>Codice su GitHub →</a>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </section>
 
