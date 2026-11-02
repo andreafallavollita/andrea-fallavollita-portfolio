@@ -1,5 +1,5 @@
 import React from 'react'
-import { BarChart3, Workflow, LayoutTemplate, PawPrint, type LucideIcon } from 'lucide-react'
+import { BarChart3, Workflow, LayoutTemplate, PawPrint, BrainCircuit, type LucideIcon } from 'lucide-react'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
 
@@ -14,10 +14,19 @@ type Project = {
   tags: string[]
   category: string
   icon: LucideIcon
-  url: string
+  url?: string
+  caseStudy?: boolean
 }
 
 const projects: Project[] = [
+  {
+    title: "TIG Neuro Creative Agent",
+    desc: "Ho progettato un agente AI personalizzato per analizzare e migliorare creatività pubblicitarie Meta. Gestisce tre percorsi guidati (creazione, analisi e miglioramento), applica una knowledge base strutturata e restituisce valutazioni euristiche, raccomandazioni operative e piani di test A/B controllati.",
+    tags: ["AI Agent Design", "Prompt Engineering", "Knowledge Base", "Multimodal AI", "Structured Output"],
+    category: "AI agent development",
+    icon: BrainCircuit,
+    caseStudy: true
+  },
   {
     title: "Dynamica Dashboard",
     desc: "Dashboard per monitorare campagne, spesa pubblicitaria e lead. Integra dati da Google Ads, Meta Ads e CRM, con filtri per periodo, KPI ed esportazioni CSV ed Excel.",
@@ -107,7 +116,7 @@ const Home: React.FC = () => {
           {projects.map((proj) => {
             const Icon = proj.icon
             return (
-              <article key={proj.url} style={{
+              <article key={proj.title} style={{
                 background: '#111',
                 border: '1px solid rgba(34, 211, 238, 0.2)',
                 borderRadius: '16px',
@@ -137,7 +146,24 @@ const Home: React.FC = () => {
                       <li key={tag} style={{ padding: '5px 10px', borderRadius: '999px', background: '#082f49', color: '#a5f3fc', fontSize: '12px' }}>{tag}</li>
                     ))}
                   </ul>
-                  <a href={proj.url} target="_blank" rel="noopener noreferrer" aria-label={`Codice su GitHub: ${proj.title} (si apre in una nuova scheda)`} style={{ color: '#00f5ff', textDecoration: 'underline', textUnderlineOffset: '4px', marginTop: 'auto', padding: '8px 0', alignSelf: 'flex-start' }}>Codice su GitHub →</a>
+                  {proj.caseStudy && (
+                    <details style={{ marginTop: 'auto', borderTop: '1px solid rgba(34, 211, 238, 0.2)', paddingTop: '16px', color: '#cbd5e1', lineHeight: 1.65 }}>
+                      <summary style={{ cursor: 'pointer', color: '#00f5ff', fontWeight: 600, padding: '8px 0' }}>Esplora il case study</summary>
+                      <div style={{ paddingTop: '12px', fontSize: '14px' }}>
+                        <h4 style={{ color: '#f8fafc', margin: '0 0 6px' }}>La sfida</h4>
+                        <p style={{ margin: '0 0 16px' }}>Rendere più sistematica la revisione delle creatività, trasformando indicazioni generiche in feedback motivati, prioritizzati e ripetibili.</p>
+                        <h4 style={{ color: '#f8fafc', margin: '0 0 6px' }}>La soluzione</h4>
+                        <p style={{ margin: '0 0 16px' }}>Un agente ChatGPT con istruzioni specializzate, regole di valutazione e percorsi conversazionali distinti. Analizza elementi come headline, CTA, logo e gerarchia visiva; organizza 20 variabili in uno score indicativo 0–100, che non rappresenta una misura neuroscientifica o una previsione di performance.</p>
+                        <h4 style={{ color: '#f8fafc', margin: '0 0 6px' }}>Workflow e controlli</h4>
+                        <p style={{ margin: '0 0 16px' }}>L'agente separa analisi, proposte e modifiche effettive: l'editing e la produzione di varianti richiedono una richiesta esplicita. Nei test A/B propone modifiche a una sola variabile per volta, così da rendere più interpretabili i confronti.</p>
+                        <h4 style={{ color: '#f8fafc', margin: '0 0 6px' }}>Competenze dimostrate</h4>
+                        <p style={{ margin: 0 }}>Progettazione di AI agent, orchestrazione di workflow guidati, strutturazione di knowledge base, analisi di immagini, output strutturati e definizione di controlli per un uso responsabile dell'AI. Case study funzionale: nessuna integrazione diretta con Meta Ads o incremento delle performance è dichiarato.</p>
+                      </div>
+                    </details>
+                  )}
+                  {proj.url && (
+                    <a href={proj.url} target="_blank" rel="noopener noreferrer" aria-label={`Codice su GitHub: ${proj.title} (si apre in una nuova scheda)`} style={{ color: '#00f5ff', textDecoration: 'underline', textUnderlineOffset: '4px', marginTop: 'auto', padding: '8px 0', alignSelf: 'flex-start' }}>Codice su GitHub →</a>
+                  )}
                 </div>
               </article>
             )
