@@ -1,5 +1,5 @@
 import React from 'react'
-import { BarChart3, Workflow, LayoutTemplate, PawPrint, BrainCircuit, type LucideIcon } from 'lucide-react'
+import { BarChart3, Workflow, LayoutTemplate, PawPrint, BrainCircuit, Glasses, type LucideIcon } from 'lucide-react'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
 
@@ -50,6 +50,14 @@ const projects: Project[] = [
     category: "Web development",
     icon: LayoutTemplate,
     url: "https://github.com/andreafallavollita5-cmyk/versione-2-tig-performance"
+  },
+  {
+    title: "Sito per centro ottico",
+    desc: "Sito statico di 28 pagine generato da modelli JavaScript senza dipendenze, con SEO tecnica (JSON-LD, sitemap, 185 redirect 301) e un pannello PHP senza database per aggiornare foto, montature, orari e blog. Il repository pubblico è una versione dimostrativa con dati fittizi.",
+    tags: ["JavaScript", "Node.js", "PHP", "SEO tecnica"],
+    category: "Web development",
+    icon: Glasses,
+    url: "https://github.com/andreafallavollita5-cmyk/ottica-sito-statico"
   },
   {
     title: "HappyTails",
