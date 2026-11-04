@@ -2,11 +2,11 @@ import React from "react";
 import "./Hero.css";
 
 const tags = [
-  "Marketing Automation",
-  "AI Automation",
-  "Lead Generation",
-  "Email Marketing",
-  "Frontend Design",
+  "AI Agent Design",
+  "Python",
+  "Workflow Automation",
+  "API Integration",
+  "Data Reporting",
 ];
 
 export default function Hero() {
@@ -28,11 +28,11 @@ export default function Hero() {
         <div className="af-hero-line" />
 
         <p className="af-hero-subtitle">
-          Marketing Automation Specialist | Digital Marketing & AI Automation
+          Junior AI Agent & Automation Developer
         </p>
 
         <p className="af-hero-description">
-          Aiuto aziende a migliorare processi di marketing, lead generation, email marketing e workflow digitali attraverso automazioni AI, analisi dei dati e soluzioni frontend scalabili.
+          Progetto agenti AI personalizzati e sviluppo automazioni in Python per raccogliere, validare e trasformare dati in report e dashboard. Creo workflow guidati e integrazioni API per semplificare attività operative.
         </p>
 
         <div className="af-hero-actions">

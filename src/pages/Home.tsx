@@ -4,8 +4,9 @@ import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
 
 const competences = [
-  "Digital Marketing", "AI Automations", "SEO", "Email Marketing", "Prompt Engineering",
-  "Lead Generation", "WordPress Development", "B2B Strategy", "Marketing Automation", "Content Marketing"
+  "AI Agent Design", "Python", "Workflow Automation", "Prompt Engineering",
+  "Knowledge Base", "Structured Output", "API Integration", "Streamlit",
+  "Validazione dati", "Reporting CSV / Excel"
 ]
 
 type Project = {
@@ -76,12 +77,13 @@ const Home: React.FC = () => {
       
 {/* SEO Text Section */}
        <section id="about" style={{ padding: '80px 20px', maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-         <h2 style={{ fontSize: '32px', color: '#00f5ff', marginBottom: '30px' }}>Marketing Automation Specialist</h2>
+         <h2 style={{ fontSize: '32px', color: '#00f5ff', marginBottom: '30px' }}>Junior AI Agent &amp; Automation Developer</h2>
         <p style={{ color: '#cbd5e1', lineHeight: '1.7' }}>
-          Sono Andrea Fallavollita, Marketing Automation Specialist con focus su digital marketing, AI automation, lead generation, email marketing e frontend design.
-          Creo workflow digitali pensati per rendere i processi più semplici, misurabili e scalabili, con un approccio pratico orientato a performance, efficienza e crescita.
-          Il mio portfolio raccoglie progetti legati ad automazioni AI, sistemi di reporting, landing page responsive e soluzioni digitali per aziende B2B.
-          Sono interessato a opportunità in ambito marketing automation, digital marketing, growth, CRM automation e AI workflow.
+          Sono Andrea Fallavollita e mi propongo come Junior AI Agent &amp; Automation Developer.
+          I miei progetti includono TIG Neuro Creative Agent, un agente ChatGPT con percorsi guidati e output strutturati;
+          Dynamica Dashboard, per consultare dati e KPI; e Agente Lead, una pipeline Python per aggregare, validare e generare report.
+          Il mio lavoro si concentra su automazioni, integrazioni API e workflow intelligenti applicati a esigenze operative concrete.
+          Affianco a queste attività esperienze in digital marketing, SEO e sviluppo web.
         </p>
       </section>
       
@@ -110,6 +112,9 @@ const Home: React.FC = () => {
             </div>
           ))}
         </div>
+        <p style={{ maxWidth: '980px', margin: '32px auto 0', color: '#cbd5e1', textAlign: 'center', lineHeight: '1.7' }}>
+          Competenze complementari: digital marketing, marketing automation, lead generation, email marketing, SEO e sviluppo web.
+        </p>
       </section>
 
       <section id="projects" style={{ padding: '80px 20px' }}>
@@ -181,9 +186,9 @@ const Home: React.FC = () => {
 
       {/* Open to Remote Opportunities Section */}
       <section id="opportunities" style={{ padding: '60px 20px', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '28px', color: '#00f5ff', marginBottom: '20px' }}>Open to remote opportunities</h2>
+        <h2 style={{ fontSize: '28px', color: '#00f5ff', marginBottom: '20px' }}>Opportunità junior in AI e automazione</h2>
         <p style={{ color: '#cbd5e1', marginBottom: '26px' }}>
-          Disponibile per opportunità remote in Marketing Automation, Digital Marketing, AI Automation, Lead Generation, Email Marketing e Frontend Design.
+          Cerco opportunità junior nello sviluppo di agenti AI, automazioni Python e workflow intelligenti, a Milano in presenza o in modalità ibrida, oppure da remoto dall’Italia.
         </p>
         <a href="https://www.linkedin.com/in/andrea-fallavollita-454697178/" target="_blank" rel="noopener noreferrer" 
            style={{ 
@@ -205,3 +210,4 @@ const Home: React.FC = () => {
 }
 
 export default Home
+

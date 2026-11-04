@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Bot,
-  Megaphone,
+  Workflow,
   Linkedin,
   Mail,
   Send,
@@ -23,19 +23,19 @@ export default function Footer() {
               <h2>
                 Andrea <span>Fallavollita</span>
               </h2>
-              <p>Digital Marketing & AI Automations Specialist</p>
+              <p>Junior AI Agent &amp; Automation Developer</p>
             </div>
           </div>
 
           <div className="footer-tags">
             <span>
               <Bot size={18} />
-              AI Automation
+              AI Agent Design
             </span>
 
             <span>
-              <Megaphone size={18} />
-              Marketing
+              <Workflow size={18} />
+              Workflow Automation
             </span>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Footer() {
 
           <div className="footer-availability">
             <span />
-            Available for collaborations
+            Disponibile per opportunità junior
           </div>
 
           <div className="footer-contact-grid">
